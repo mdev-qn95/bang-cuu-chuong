@@ -43,3 +43,5 @@ function checkAnswer(selected, correct) {
   }
   scoreEl.innerText = `⭐ Điểm: ${score}`;
 }
+
+nextQuestion();
