@@ -1,27 +1,45 @@
-let a = 2;
-let b = 1;
+const question = document.getElementById("question");
+const choices = document.getElementById("choices");
+const message = document.getElementById("message");
+const scoreEl = document.getElementById("score");
+const tableSelect = document.getElementById("table");
+
 let score = 0;
 
-function next() {
-  const table = Number(document.getElementById("table").value);
-  b = Math.floor(Math.random() * 10) + 1;
-  a = table;
+function nextQuestion() {
+  message.innerText = "";
 
-  document.getElementById("question").innerText =
-    `${a} × ${b} = ?`;
+  const table = Number(tableSelect.value);
+  const b = Math.floor(Math.random() * 9) + 1;
+  const correct = table * b;
 
-  document.getElementById("answer").value = "";
-  document.getElementById("result").innerText = "";
+  question.innerText = `${table} × ${b} = ?`;
+
+  let answers = new Set();
+  answers.add(correct);
+
+  while (answers.size < 3) {
+    let wrong = correct + Math.floor(Math.random() * 5) - 2;
+    if (wrong > 0) answers.add(wrong);
+  }
+
+  const shuffled = [...answers].sort(() => Math.random() - 0.5);
+
+  choices.innerHTML = "";
+  shuffled.forEach(val => {
+    const btn = document.createElement("button");
+    btn.innerText = val;
+    btn.onclick = () => checkAnswer(val, correct);
+    choices.appendChild(btn);
+  });
 }
 
-function check() {
-  const ans = Number(document.getElementById("answer").value);
-  if (ans === a * b) {
-    document.getElementById("result").innerText = "🎉 Giỏi quá!";
+function checkAnswer(selected, correct) {
+  if (selected === correct) {
+    message.innerText = "🎉 Giỏi quá!";
     score++;
   } else {
-    document.getElementById("result").innerText =
-      `😢 Sai rồi! Đáp án đúng là ${a * b}`;
+    message.innerText = `😢 Sai rồi! Đáp án là ${correct}`;
   }
-  document.getElementById("score").innerText = `Điểm: ${score}`;
+  scoreEl.innerText = `⭐ Điểm: ${score}`;
 }
