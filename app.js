@@ -34,8 +34,9 @@ function nextQuestion() {
   question.innerText = `${table} × ${b} = ?`;
 
   let answers = new Set([correct]);
-  while (answers.size < 3) {
-    let wrong = correct + Math.floor(Math.random() * 5) - 2;
+
+  while (answers.size < 4) {
+    let wrong = correct + Math.floor(Math.random() * 7) - 3;
     if (wrong > 0) answers.add(wrong);
   }
 
@@ -70,7 +71,6 @@ function checkAnswer(selected, correct, btn) {
 
   save();
   updateUI();
-
   setTimeout(nextQuestion, 1000);
 }
 
