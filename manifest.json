@@ -1,0 +1,20 @@
+{
+  "name": "Bảng cửu chương cho bé",
+  "short_name": "Cửu chương",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fff3e0",
+  "theme_color": "#ff7043",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
