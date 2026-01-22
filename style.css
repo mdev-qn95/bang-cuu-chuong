@@ -32,12 +32,17 @@ select {
   margin: 20px 0;
 }
 
+/* GRID 2x2 */
+#choices {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
 #choices button {
-  width: 100%;
-  margin: 8px 0;
-  padding: 14px;
-  font-size: 26px;
-  border-radius: 14px;
+  aspect-ratio: 1 / 1;      /* vuông */
+  font-size: 28px;
+  border-radius: 18px;      /* bo góc */
   border: none;
   background: #42a5f5;
   color: white;
@@ -50,6 +55,7 @@ select {
 #message {
   font-size: 22px;
   min-height: 32px;
+  margin-top: 12px;
 }
 
 #score,
