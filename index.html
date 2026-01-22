@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bảng cửu chương cho bé</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app">
+    <h1>🧮 Bảng cửu chương</h1>
+
+    <select id="table">
+      <option value="2">Bảng 2</option>
+      <option value="3">Bảng 3</option>
+      <option value="4">Bảng 4</option>
+      <option value="5">Bảng 5</option>
+      <option value="6">Bảng 6</option>
+      <option value="7">Bảng 7</option>
+      <option value="8">Bảng 8</option>
+      <option value="9">Bảng 9</option>
+    </select>
+
+    <h2 id="question">Nhấn Bắt đầu</h2>
+
+    <input id="answer" type="number" placeholder="Nhập đáp án" />
+
+    <button onclick="check()">Trả lời</button>
+    <button onclick="next()">Câu tiếp theo</button>
+
+    <p id="result"></p>
+    <p id="score">Điểm: 0</p>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
